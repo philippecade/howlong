@@ -6,8 +6,8 @@ function main() {
 	var leavetime;
 	var iterationCount = 0;
 
-	$('#applicationIframe').contents().find('.time-input input').not('.readonly').each(function(index) {
-		var timestampS = $(this).attr("data_rawvalue");
+	$('#applicationIframe').contents().find('.time-point-wrapper.locked').not('.readonly').each(function(index) {
+		var timestampS = $(this).attr("data_time");
 		var timestamp = Number.parseInt(timestampS);
 
 		if (work == true) {
