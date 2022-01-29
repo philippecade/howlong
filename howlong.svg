@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="howlong.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.70911897"
+     inkscape:cx="119.16195"
+     inkscape:cy="561.25984"
+     inkscape:window-width="1920"
+     inkscape:window-height="1000"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect1306"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Use fill-rule evenodd on &lt;b&gt;fill and stroke&lt;/b&gt; dialog if no flatten result after convert clip to paths." />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1302">
+      <path
+         style="display:none;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 140.29146,151.85804 37.68467,19.77512 0.919,-41.31187 -38.60367,-0.47707 z"
+         id="path1304" />
+      <path
+         id="lpe_path-effect1306"
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         class="powerclip"
+         d="M 45.967335,72.085423 H 176.78267 V 202.90075 H 45.967335 Z m 94.324125,79.772617 37.68467,19.77512 0.919,-41.31187 -38.60367,-0.47707 z" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <ellipse
+       style="fill:#000000;fill-opacity:0.20491803;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path1822"
+       cx="104.28934"
+       cy="139.67075"
+       rx="70.145729"
+       ry="67.347359" />
+    <g
+       id="g1798">
+      <path
+         id="path31"
+         style="fill:none;stroke:#000000;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         clip-path="url(#clipPath1302)"
+         inkscape:path-effect="#path-effect1306"
+         sodipodi:type="arc"
+         sodipodi:cx="111.375"
+         sodipodi:cy="137.49309"
+         sodipodi:rx="55.407665"
+         sodipodi:ry="55.407665"
+         d="M 166.78267,137.49309 A 55.407665,55.407665 0 0 1 111.375,192.90075 55.407665,55.407665 0 0 1 55.967335,137.49309 55.407665,55.407665 0 0 1 111.375,82.085423 55.407665,55.407665 0 0 1 166.78267,137.49309 Z"
+         transform="translate(-7.9081275,2.0645701)" />
+      <path
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.278703px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 143.51066,131.89482 h 29.5575 l -13.83997,19.33427 z"
+         id="path944"
+         sodipodi:nodetypes="cccc" />
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path1332"
+         cx="103.21695"
+         cy="139.26714"
+         r="5.9698491" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.71675;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1454"
+         width="7.4623113"
+         height="34.089367"
+         x="99.485786"
+         y="99.642059" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.49176;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1454-3"
+         width="7.6872973"
+         height="24.986464"
+         x="-42.819988"
+         y="174.97066"
+         transform="rotate(-49.48066)" />
+    </g>
+  </g>
+</svg>
