@@ -1,12 +1,12 @@
 function main() {
-	var remainingWorkTime = 492; /* (8 hours 12 minutes) */
-	var mandatoryBreakDuration = 30;
-	var isFurtherProcessingNeeded = true;
-	var isMandatoryBreakFulfilled = false;
+    var remainingWorkTime = 492; /* (8 hours 12 minutes) */
+    var mandatoryBreakDuration = 30;
+    var isFurtherProcessingNeeded = true;
+    var isMandatoryBreakFulfilled = false;
     var now = new Date();
-	var canLeaveAt;
+    var canLeaveAt;
 
-	$('#applicationIframe').contents().find('.time-interval-wrapper').each(function(index) {
+    $('#applicationIframe').contents().find('.time-interval-wrapper').each(function(index) {
 
         var timestampFromS = $(this).attr("data_fromtime");
         var timestampFrom = Number.parseInt(timestampFromS);
@@ -45,7 +45,7 @@ function main() {
                     remainingWorkTime -= diff;
                 }
             }
-	    }
+        }
     });
 
     console.log('\n');
@@ -74,8 +74,8 @@ function main() {
 
 function getMinsAsTime(mins){
     var hours = Math.floor(mins / 60);
-	var minutes = mins % 60;
-	return hours+":"+pad(minutes);
+    var minutes = mins % 60;
+    return hours+":"+pad(minutes);
 }
 
 function getTimeInMins(time){
@@ -87,7 +87,7 @@ function getTimeInMins(time){
  * correctly
  */
 function pad(num) { 
-	return ('00' + num).substr(-2); 
+    return ('00' + num).substr(-2);
 }
 
 main()
