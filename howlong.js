@@ -5,48 +5,55 @@ function main() {
     var isMandatoryBreakFulfilled = false;
     var now = new Date();
     var canLeaveAt;
+    var isOnTimeRecordingScreen = false;
 
-    $('#applicationIframe').contents().find('.time-interval-wrapper').each(function(index) {
+    var iframeContent = $('#applicationIframe').contents();
+    if (iframeContent.find('.modal-dialog.active').length > 0) {
+        isOnTimeRecordingScreen = true;
+        iframeContent.find('.time-interval-wrapper').each(function(index) {
 
-        var timestampFromS = $(this).attr("data_fromtime");
-        var timestampFrom = Number.parseInt(timestampFromS);
-        var timestampToS = $(this).attr("data_totime");
-        // if interval wrapper is not closed, the "data_totime" will be 29952
-        if(Number.parseInt(timestampToS) > 24*60){
-            timestampToS = getTimeInMins(now);
-            console.log('time-interval-wrapper is not closed. Continue as it would be closed now (' + timestampToS + ').');
-        }
-        var timestampTo = Number.parseInt(timestampToS);
-        var diff = timestampTo - timestampFrom;
+            var timestampFromS = $(this).attr("data_fromtime");
+            var timestampFrom = Number.parseInt(timestampFromS);
+            var timestampToS = $(this).attr("data_totime");
+            // if interval wrapper is not closed, the "data_totime" will be 29952
+            if(Number.parseInt(timestampToS) > 24*60){
+                timestampToS = getTimeInMins(now);
+                console.log('time-interval-wrapper is not closed. Continue as it would be closed now (' + timestampToS + ').');
+            }
+            var timestampTo = Number.parseInt(timestampToS);
+            var diff = timestampTo - timestampFrom;
 
-        var isw = $(this).contents().find('.input-search-wrapper :input.searcher');
-        var wrapperType = isw.attr("value"); //Presence / ho / Break/absence / ...
+            var isw = $(this).contents().find('.input-search-wrapper :input.searcher');
+            var wrapperType = isw.attr("value"); //Presence / ho / Break/absence / ...
 
-        console.log(wrapperType+': from ' + timestampFrom + '  to ' + timestampTo);
+            console.log(wrapperType+': from ' + timestampFrom + '  to ' + timestampTo);
 
-        if(wrapperType == "Break/absence"){
-            if(!isMandatoryBreakFulfilled){
-                // must have a break which is at least 30 mins long:
-                var isLonger = diff >= mandatoryBreakDuration;
-                console.log('\tDuration of the break in minutes: ' + diff);
-                if(isLonger){
-                    console.log('\tMandatory break fulfilled');
-                    isMandatoryBreakFulfilled = true;
+            if(wrapperType == "Break/absence"){
+                if(!isMandatoryBreakFulfilled){
+                    // must have a break which is at least 30 mins long:
+                    var isLonger = diff >= mandatoryBreakDuration;
+                    console.log('\tDuration of the break in minutes: ' + diff);
+                    if(isLonger){
+                        console.log('\tMandatory break fulfilled');
+                        isMandatoryBreakFulfilled = true;
+                    }
+                }
+            } else {
+                console.log('In this timeslot you worked for ' + diff + ' minutes.');
+                if (isFurtherProcessingNeeded) {
+                    if(remainingWorkTime - diff < 0) {
+                        canLeaveAt = getMinsAsTime(timestampFrom + remainingWorkTime);
+                        isFurtherProcessingNeeded = false;
+                        console.log('You can go home :)');
+                    } else {
+                        remainingWorkTime -= diff;
+                    }
                 }
             }
-        } else {
-            console.log('In this timeslot you worked for ' + diff + ' minutes.');
-            if (isFurtherProcessingNeeded) {
-                if(remainingWorkTime - diff < 0) {
-                    canLeaveAt = getMinsAsTime(timestampFrom + remainingWorkTime);
-                    isFurtherProcessingNeeded = false;
-                    console.log('You can go home :)');
-                } else {
-                    remainingWorkTime -= diff;
-                }
-            }
-        }
-    });
+        });
+    } else {
+        console.log('No .modal-dialog.active found');
+    }
 
     console.log('\n');
 
@@ -65,11 +72,13 @@ function main() {
     }
 
 
-    var message = "You can leave at "+ canLeaveAt;
-    if (!isMandatoryBreakFulfilled) {
-        message += ", this includes a mandatory 30 minute break.";
+    if (isOnTimeRecordingScreen) {
+        var message = "You can leave at " + canLeaveAt;
+        if (!isMandatoryBreakFulfilled) {
+            message += ", this includes a mandatory 30 minute break.";
+        }
+        window.alert(message);
     }
-    window.alert(message);
 }
 
 function getMinsAsTime(mins){
