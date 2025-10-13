@@ -28,7 +28,7 @@ function main() {
 
             console.log(wrapperType+': from ' + timestampFrom + '  to ' + timestampTo);
 
-            if(wrapperType == "Break/absence"){
+            if(wrapperType == "Break/absence" || wrapperType == "Pause/Abwesenheit"){
                 if(!isMandatoryBreakFulfilled){
                     // must have a break which is at least 30 mins long:
                     var isLonger = diff >= mandatoryBreakDuration;
