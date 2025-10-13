@@ -1,6 +1,6 @@
 {
     "name": "How long?",
-    "version": "0.5",
+    "version": "0.6",
     "description": "Shows when you can leave!",
     "permissions": [
         "activeTab",
